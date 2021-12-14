@@ -19,6 +19,7 @@
     "ckeditor": "4.12.1",
     "date-fns": "2.23.0",
     "formik": "2.2.6",
+    "prop-types": "^15.7.2",
     "react": "17.0.2",
     "react-awesome-reveal": "^3.8.1",
     "react-dom": "17.0.2",
@@ -45,26 +46,24 @@
     "@testing-library/react": "^12.1.1",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.32.0",
-    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-airbnb": "^19.0.2",
     "eslint-config-prettier": "8.3.0",
-    "eslint-plugin-react": "^7.26.1",
-    "eslint-plugin-react-hooks": "^4.2.0",
-    "husky": "^4.2.5",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.27.1",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "husky": "^7.0.0",
     "prettier": "^2.0.5"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:nowatch": "react-scripts test --watchAll=false",
     "eject": "react-scripts eject",
     "lint": "npx eslint ./src",
-    "lint:ci": "npx eslint ./src --format json -o reports/eslint"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "lint:fix": "eslint ./src/ --fix",
+    "prepare": "husky install"
   },
   "browserslist": {
     "production": [

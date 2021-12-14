@@ -1,15 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from 'react';
 
-const Home = () => {
-  const [welcomeText, setWelcomeText] = useState("");
-
+const Home = function () {
   return (
     <>
       {/* <h1 style={{ textAlign: "center" }}>{welcomeText}</h1> */}
       <section
         style={{
-          maxWidth: "1400px",
-          margin: "0 auto",
+          maxWidth: '1400px',
+          margin: '0 auto',
         }}
       >
         Home
