@@ -1,0 +1,98 @@
+.title-container {
+  position: relative;
+  width: 100%;
+  margin-bottom: 100px;
+  background-color: whitesmoke;
+}
+#root {
+  background-color: whitesmoke !important;
+}
+.title-container-text {
+  width: 100%;
+  position: absolute;
+  top: 55%;
+  text-align: center;
+}
+
+.title-container-text p {
+  display: inline-block;
+  width: 90%;
+  max-width: 700px;
+  font-size: 18px;
+  line-height: 30px;
+}
+#tweet-embed {
+  display: flex;
+  width: 100vw;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.linkedin-badge-container {
+  display: flex;
+  margin: 100px auto -115px;
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+  background-color: #d4cac8;
+}
+.ContenedorTweets {
+  background: url(../Assets/waves/wave.svg) no-repeat bottom center;
+}
+.ContenedorWaveFooter {
+  background: url(../Assets/waves/wave.svg) no-repeat bottom center;
+  width: 100vw;
+  height: 500px;
+  margin-top: -300px;
+}
+.ContenedorNosotros {
+  width: 100vw;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: -200px;
+}
+.ContenedorNosotros img {
+  margin-bottom: 300px;
+}
+.ContenedorNosotros h1 {
+  color: rgb(8 8 8 / 75%) !important;
+  margin-bottom: 300px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+.ContenedorNosotrosH1 {
+  width: 600px;
+}
+.ContenedorTitulo {
+  /* background: url(../Assets/waves/wavemiembros4.svg) top / 100% no-repeat; */
+  width: 100vw;
+  display: flex;
+  height: 60px;
+  align-items: center;
+  justify-content: center;
+  color: #28527ad8;
+  margin-bottom: -50px;
+  /* text-shadow: 2px 2px 2px rgb(48, 48, 48); */
+}
+.ContenedorTitulo h1 {
+  margin-bottom: 70px;
+}
+
+.MiembrosLogo {
+  height: 200px;
+  max-width: 200px;
+  display: block;
+}
+.css-1wmwz36-MuiContainer-root {
+  margin-bottom: 0 !important;
+}
+.css-129m33r-MuiPaper-root-MuiCard-root:hover {
+  background-color: lightgrey !important;
+  transition: 1s;
+}
+
+.AnimatedSwitch {
+  min-height: 100vh;
+}

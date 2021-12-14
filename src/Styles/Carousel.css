@@ -1,0 +1,36 @@
+/* .containerSlide {
+    margin: 0 auto;
+    max-width: 1440px;
+    width: 80%;
+    padding: 0px 20px 0 20px;
+  }
+  
+  .swiperSlide {
+    background-position: center;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+  }
+  
+  .contentSlide {
+    position: absolute;
+    padding: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+  }
+  
+  .titleSlide {
+    color: #fff;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .descriptionSlide {
+    color: #fff;
+    text-align: center;
+    margin-top: 20px;
+    word-break: break-all;
+    padding: 10px 20px;
+  } */

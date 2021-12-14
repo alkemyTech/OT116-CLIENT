@@ -1,0 +1,118 @@
+.member-image {
+  width: 150px;
+}
+
+.member-name {
+  text-align: left;
+}
+
+.member-action {
+  margin: 10px;
+}
+
+.linkActivity {
+  text-decoration: none;
+  color: #000;
+  text-align: center;
+  text-shadow: 1px 1px 1px black;
+  cursor: pointer;
+}
+
+.responsiveTable {
+  border-radius: 5px;
+  padding: 25px;
+}
+.css-v5yj2f-MuiButtonBase-root-MuiButton-root {
+  background-color: #28527a !important;
+  border: 0.5px solid white !important;
+  height: 40px;
+}
+.TableRowModify tr th {
+  margin: 10px;
+  height: 80px;
+  background-color: #28527a !important;
+}
+.TableCell {
+  color: rgb(255, 255, 255) !important;
+  font-weight: 600 !important;
+  font-size: 1.2rem !important;
+}
+
+td,
+th {
+  background-color: #d8e0e24f !important;
+  border-bottom: 1px solid black;
+  color: rgb(14, 13, 13) !important;
+  font-weight: 500 !important;
+  padding: 7px 20px !important;
+  text-align: center;
+  font-size: 1rem !important;
+}
+.TableFinal {
+  margin-top: 10px;
+  width: 90% !important;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.TableContainer {
+  display: flex;
+  justify-content: center;
+  width: 100% !important;
+  margin-bottom: 100px !important;
+}
+
+.activityImageContainer td {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 200px;
+  width: -webkit-fill-available;
+  padding: 1000px;
+}
+
+.activityButton {
+  border: 1px solid #ddd;
+  width: 100px;
+  background-color: #d61313;
+  color: #fff;
+  padding: 10px;
+  margin: 5px 0px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.CardTransition:hover {
+  border-radius: 2%;
+  box-shadow: 0.6rem 0.6rem 0.6rem 0.6rem rgba(138, 137, 137, 0.404);
+  transition: all 0.5s ease-in-out !important;
+  transform: rotateX(20deg) !important;
+  transform: rotateY(5deg) !important;
+}
+.CardTransition {
+  transition: all 1s ease-in-out !important;
+}
+.TableTitles {
+  width: 1900px;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin: 0 auto;
+}
+.TableTitles h1 {
+  color: black;
+}
+.TableLinks {
+  display: flex;
+}
+.TableLinks button {
+  height: 40px;
+  margin-left: 20px;
+  text-decoration: none;
+  color: white;
+}
+.table-row-image {
+  max-height: 70px !important;
+  width: 100px !important;
+}

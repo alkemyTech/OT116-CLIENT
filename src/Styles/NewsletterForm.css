@@ -1,0 +1,26 @@
+.GreyRoundedContainerForm{
+    width:400px;
+    height:130px;
+    background-color:whitesmoke;
+    border-radius: 20px;
+}
+.GreyRoundedContainerForm input{
+    border:1px solid rgb(64, 75, 78);
+    height: 20px;
+
+}
+.GreyRoundedContainerForm p{
+color:grey;
+font-size: 0.8rem;
+margin-top:3px;
+}
+.GreyRoundedContainerForm h4{
+font-size: 1.3rem;
+margin-bottom: 1px;
+}
+.StandardButton{
+    border: 1px solid grey;
+    border-radius: 10%;
+    margin-left:3px;
+}
+

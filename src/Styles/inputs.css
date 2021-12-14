@@ -1,0 +1,21 @@
+/* .show-file-input {
+  max-width: -webkit-fill-available;
+} */
+
+.show-file-input .show-file-input__file-name {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.show-ckeditor-input {
+  margin: 5px 0;
+}
+
+.show-ckeditor-input__label {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.hide {
+  display: none;
+}

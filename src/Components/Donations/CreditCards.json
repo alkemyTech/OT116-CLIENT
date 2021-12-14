@@ -1,0 +1,22 @@
+{
+  "creditCards": [
+    {
+      "card": "Mastercard",
+      "number": "5031 7557 3453 0604",
+      "security_code": 123,
+      "expiration_date": "11/25"
+    },
+    {
+      "card": "Visa",
+      "number": "4509 9535 6623 3704",
+      "security_code": 123,
+      "expiration_date": "11/25"
+    },
+    {
+      "card": "American Express",
+      "number": "3711 803032 57522",
+      "security_code": 1234,
+      "expiration_date": "11/25"
+    }
+  ]
+}
