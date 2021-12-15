@@ -21,6 +21,6 @@
         "react/prop-types": 0,
         "jsx-props-no-spreading": 0,
         "func-names": 0,
-        "linebreak-style": ["error", "windows"]
+        "linebreak-style": 0
     }
 }
