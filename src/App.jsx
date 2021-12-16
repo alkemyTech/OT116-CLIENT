@@ -8,22 +8,20 @@ import store from './app/store';
 import PublicRouter from './Components/PublicWeb/PublicRouter';
 import GlobalTheme from './Styles/Theme';
 
-const App = function () {
-  return (
-    <Provider store={store}>
-      <ThemeProvider theme={GlobalTheme}>
-        <BrowserRouter>
-          <AnimatedSwitch
-            atEnter={{ opacity: 0 }}
-            atLeave={{ opacity: 1 }}
-            atActive={{ opacity: 1 }}
-          >
-            <PublicRouter />
-          </AnimatedSwitch>
-        </BrowserRouter>
-      </ThemeProvider>
-    </Provider>
-  );
-};
+const App = () => (
+  <Provider store={store}>
+    <ThemeProvider theme={GlobalTheme}>
+      <BrowserRouter>
+        <AnimatedSwitch
+          atEnter={{ opacity: 0 }}
+          atLeave={{ opacity: 1 }}
+          atActive={{ opacity: 1 }}
+        >
+          <PublicRouter />
+        </AnimatedSwitch>
+      </BrowserRouter>
+    </ThemeProvider>
+  </Provider>
+);
 
 export default App;
