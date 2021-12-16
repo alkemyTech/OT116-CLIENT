@@ -1,4 +1,6 @@
 import React from 'react';
+import Slider from '../Slider/Slider';
+import arraySlides from '../../constants/initialValues';
 
 const Home = function () {
   return (
@@ -10,7 +12,7 @@ const Home = function () {
           margin: '0 auto',
         }}
       >
-        Home
+        <Slider arraySlides={arraySlides} />
       </section>
     </>
   );

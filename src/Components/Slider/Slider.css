@@ -1,0 +1,20 @@
+.slider-image {
+  width: 100%;
+
+}
+
+.slider-text-container {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 20%;
+  text-align: center;
+  background-color: #00000078;
+  padding: 10px 0;
+}
+
+.slider-text {
+  text-transform: uppercase;
+  color: white;
+  font-size: 14px;
+}

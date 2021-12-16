@@ -39,7 +39,7 @@
     "redux-persist": "6.0.0",
     "redux-thunk": "2.3.0",
     "sweetalert2": "^10.16.6",
-    "swiper": "6.8.4",
+    "swiper": "^6.8.4",
     "web-vitals": "1.0.1"
   },
   "devDependencies": {
