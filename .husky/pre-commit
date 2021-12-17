@@ -1,5 +1,5 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-yarn run test:nowatch
-yarn run lint
+yarn test:nowatch
+yarn lint
