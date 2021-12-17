@@ -18,6 +18,10 @@
         "react"
     ],
     "rules": {
+        "linebreak-style": [
+            "error",
+            "windows"
+        ],
         "react/prop-types": 0,
         "jsx-props-no-spreading": 0,
         "func-names": 0,
