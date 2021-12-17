@@ -65,6 +65,10 @@
     "lint:fix": "eslint ./src/ --fix",
     "prepare": "husky install"
   },
+  "engines": {
+    "npm": "please-use-yarn",
+    "node": ">=14"
+  },
   "browserslist": {
     "production": [
       ">0.2%",
