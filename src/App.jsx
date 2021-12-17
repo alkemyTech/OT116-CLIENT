@@ -8,7 +8,6 @@ import store from './app/store';
 import PublicRouter from './Components/PublicWeb/PublicRouter';
 import GlobalTheme from './Styles/Theme';
 
-
 const App = () => (
   <Provider store={store}>
     <ThemeProvider theme={GlobalTheme}>
