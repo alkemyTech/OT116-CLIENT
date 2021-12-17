@@ -1,23 +1,31 @@
+import sliderJuguetes1 from '../img/sliderJuguetes1.jpg';
+import sliderJuguetes2 from '../img/sliderJuguetes2.jpg';
+import sliderJuguetes3 from '../img/sliderJuguetes3.jpg';
+
 const arraySlides = [
   {
     name: 'slide1',
-    url: 'https://www.storestuffhere.com/wp-content/uploads/2015/07/ASS-Slider-Placeholder-1024x323.png',
+    url: sliderJuguetes1,
     text: 'texto al pie',
+    targetUrl: 'https://www.ole.com.ar',
   },
   {
     name: 'slide2',
-    url: 'https://www.storestuffhere.com/wp-content/uploads/2015/07/ASS-Slider-Placeholder-1024x323.png',
+    url: sliderJuguetes2,
     text: 'texto al pie',
+    targetUrl: 'https://www.ole.com.ar',
   },
   {
     name: 'slide3',
-    url: 'https://www.storestuffhere.com/wp-content/uploads/2015/07/ASS-Slider-Placeholder-1024x323.png',
+    url: sliderJuguetes3,
     text: 'texto al pie',
+    targetUrl: 'https://www.ole.com.ar',
   },
   {
     name: 'slide4',
-    url: 'https://www.storestuffhere.com/wp-content/uploads/2015/07/ASS-Slider-Placeholder-1024x323.png',
+    url: sliderJuguetes1,
     text: 'texto al pie',
+    targetUrl: 'https://www.ole.com.ar',
   },
 ];
 

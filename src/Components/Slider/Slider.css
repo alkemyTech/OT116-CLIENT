@@ -4,17 +4,27 @@
 }
 
 .slider-text-container {
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-  height: 20%;
-  text-align: center;
-  background-color: #00000078;
-  padding: 10px 0;
+  display: none;
 }
 
 .slider-text {
   text-transform: uppercase;
-  color: white;
+  color: #001da3;
   font-size: 14px;
+  font-weight: bold;
+  background-color: #b600c99c;
+  width: 50%;
+  padding: 10px;
+}
+
+@media (min-width: 768px) {
+  .slider-text-container {
+    position: absolute;
+    width: 100%;
+    bottom: 5%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 10px 0;
+  } 
 }
