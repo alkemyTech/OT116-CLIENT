@@ -1,5 +1,4 @@
 import React from 'react';
-import CampaignFooter from '../CampaignFooter/CampaignFooter';
 
 const Home = function () {
   return (
@@ -13,7 +12,6 @@ const Home = function () {
       >
         Home
       </section>
-      <CampaignFooter />
     </>
   );
 };

@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #db5752;
+  font-weight: bold;
+  transition: color 500ms;
+}
+
+a:hover {
+  color: #ffb8b6;
+}
+
+footer {
+  background: #ff79614f;
+  color: #db5752;
+  padding-block: 0.55rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.logo {
+  max-height: 8rem;
+  max-width: 8rem;
+}
+
+.ong_name {
+  text-align: center;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
+  display: none;
+}
+
+.campaigns__list,
+.socials__list {
+  padding: 1rem 0;
+  display: flex;
+  gap: 1rem;
+}
+
+.ong,
+li a {
+  display: flex;
+  place-items: center;
+  gap: 0.8rem;
+}
+
+.campaigns,
+.socials__text {
+  display: none;
+}
+
+.campaigns h2 {
+  display: inline-block;
+  border-bottom: 2px solid;
+}
+
+@media screen and (min-width: 768px) {
+  .ong_name {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .socials__text {
+    display: inline-block;
+  }
+
+  .socials__list {
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 1820px) {
+  .campaigns {
+    display: block;
+  }
+}
