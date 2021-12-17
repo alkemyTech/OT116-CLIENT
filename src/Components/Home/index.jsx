@@ -3,8 +3,7 @@ import React from 'react';
 const Home = function () {
   return (
     <>
-      {/* <h1 style={{ textAlign: "center" }}>{welcomeText} s</h1> */}
-
+      {/* <h1 style={{ textAlign: "center" }}>{welcomeText} </h1> */}
       <section
         style={{
           maxWidth: '1400px',
