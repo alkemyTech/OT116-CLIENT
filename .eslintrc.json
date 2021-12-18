@@ -21,6 +21,7 @@
         "react/prop-types": 0,
         "jsx-props-no-spreading": 0,
         "func-names": 0,
-        "react/function-component-definition": 0
+        "react/function-component-definition": 0,
+        "linebreak-style": 0
     }
 }
