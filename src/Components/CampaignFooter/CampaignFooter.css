@@ -25,8 +25,8 @@ footer {
 }
 
 .logo {
-  max-height: 8rem;
-  max-width: 8rem;
+  max-height: 6rem;
+  max-width: 6rem;
 }
 
 .ong_name {
@@ -65,6 +65,11 @@ li a {
 @media screen and (min-width: 768px) {
   .ong_name {
     display: block;
+  }
+
+  .logo {
+    max-height: 8rem;
+    max-width: 8rem;
   }
 }
 
