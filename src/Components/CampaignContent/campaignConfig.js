@@ -15,11 +15,8 @@ export const toysCampaignConfig = {
   time: '20:00',
   address: 'Calle 123, Localidad, Provincia',
   description: 'Descripcion de la campaña lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-  image1,
-  image2,
-  image3,
-  image4,
-  image5,
+  sideImages: [image1, image2],
+  bottomImages: [image3, image4, image5],
 };
 
 export const schoolCampaignConfig = {
@@ -28,9 +25,6 @@ export const schoolCampaignConfig = {
   time: '20:00',
   address: 'Calle 123, Localidad, Provincia',
   description: 'Descripcion de la campaña lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-  image1: image6,
-  image2: image7,
-  image3: image8,
-  image4: image9,
-  image5: image10,
+  sideImages: [image6, image7],
+  bottomImages: [image8, image9, image10],
 };

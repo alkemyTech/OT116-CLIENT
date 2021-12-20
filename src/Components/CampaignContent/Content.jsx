@@ -9,11 +9,8 @@ const Content = ({ content }) => {
     time,
     address,
     description,
-    image1,
-    image2,
-    image3,
-    image4,
-    image5,
+    sideImages,
+    bottomImages,
   } = content;
 
   // Address received as "calle 123, Localidad, Provincia"
@@ -37,13 +34,10 @@ const Content = ({ content }) => {
         <p>{description}</p>
       </div>
       <div className="landingContent--images sideImages">
-        <img src={image1} alt={name} />
-        <img src={image2} alt={name} />
+        {sideImages.map((image) => <img src={image} alt={name} />)}
       </div>
       <div className="landingContent--images bottomImages">
-        <img src={image3} alt={name} />
-        <img src={image4} alt={name} />
-        <img src={image5} alt={name} />
+        {bottomImages.map((image) => <img src={image} alt={name} />)}
       </div>
     </section>
   );
