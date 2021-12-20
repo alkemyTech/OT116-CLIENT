@@ -1,4 +1,7 @@
 import React from 'react';
+import Slider from '../Slider/Slider';
+import arraySlides from '../../constants/initialValues';
+import configSliderJuguetes from '../../constants/configSliderJuguetes';
 
 const Home = function () {
   return (
@@ -10,7 +13,7 @@ const Home = function () {
           margin: '0 auto',
         }}
       >
-        Home
+        <Slider arraySlides={arraySlides} config={configSliderJuguetes} />
       </section>
     </>
   );
