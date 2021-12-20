@@ -1,0 +1,17 @@
+.countDown {
+  display: none;
+  text-align: center;
+  font-size: 26px;
+}
+@media (min-width: 768px) {
+  .countDown{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media (min-width: 1920px) {
+  .countDown h3 {
+    font-size: 30px;
+  }
+}
