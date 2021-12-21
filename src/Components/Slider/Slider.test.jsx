@@ -89,6 +89,7 @@ describe('Slider Render', () => {
     setTimeout(() => {
       fireEvent.change(slidesImages[0])  
     }, 10000);
+    expect(slideChangeHandler.mock.calls).toHaveLength(1)
   })
 })
 
