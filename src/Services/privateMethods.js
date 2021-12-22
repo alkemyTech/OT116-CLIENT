@@ -1,5 +1,5 @@
 export default function getHeaderAuthorization() {
-  const isTokenSaved = JSON.parse(window.localStorage.getItem('token')) || null;
+  const isTokenSaved = window.localStorage.getItem('token');
 
   return {
     Authorization: `Bearer ${isTokenSaved}`,
