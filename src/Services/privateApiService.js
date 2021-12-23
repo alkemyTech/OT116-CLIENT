@@ -9,7 +9,7 @@ export default function getHeaderAuthorization() {
 }
 
 export async function getPrivate(url, id) {
-  const targetURL = `${url}/${id}`;
+  const targetURL = id ? `${url}/${id}` : url;
   const request = await axios.get(targetURL, {
     headers: getHeaderAuthorization(),
   });
