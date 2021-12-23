@@ -20,7 +20,7 @@ SwiperCore.use([Autoplay, Keyboard, Pagination, Navigation]);
 
 const Slider = function ({ arraySlides, config, onSlideChange }) {
   const renderSlide = (slide) => (
-    <SwiperSlide key={slide.name}>
+    <SwiperSlide data-testid="slide-container" key={slide.name}>
       <Slide slide={slide} config={config} />
     </SwiperSlide>
   );
