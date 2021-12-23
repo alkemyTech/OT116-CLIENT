@@ -13,5 +13,5 @@ export async function getPrivate(url, id) {
   const request = await axios.get(targetURL, {
     headers: getHeaderAuthorization(),
   });
-  return request.data;
+  return request.data.data;
 }
