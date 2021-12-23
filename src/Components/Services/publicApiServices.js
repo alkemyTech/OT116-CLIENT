@@ -11,3 +11,7 @@ export const getEndpointById = async (path, id) => {
   const res = await axios.get(`${baseUrl}${path}/${id}`);
   return res.data.data;
 };
+
+export const postToEndpoint = async (path, data) => {
+  await axios.post((baseUrl + path), data);
+};
