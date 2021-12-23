@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export function getHeaderAuthorization() {
+export default function getHeaderAuthorization() {
   const isTokenSaved = window.localStorage.getItem('token');
 
   return {
