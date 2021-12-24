@@ -9,18 +9,18 @@ export default function getHeaderAuthorization() {
   };
 }
 
-const headers = {
-  ...getHeaderAuthorization(),
-};
-
 export async function getPrivateById(url, id) {
   const targetURL = id ? `${url}/${id}` : url;
-  const request = await axios.get(targetURL, headers);
+  const request = await axios.get(targetURL, {
+    headers: getHeaderAuthorization(),
+  });
   return request.data.data;
 }
 
 export async function patchPrivateById(url, id, body) {
   const targetURL = `${url}/${id}`;
-  const request = await axios.patch(targetURL, body, headers);
+  const request = await axios.patch(targetURL, body, {
+    headers: getHeaderAuthorization(),
+  });
   return request.data.data;
 }
