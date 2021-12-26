@@ -23,3 +23,10 @@ export async function postPrivateEndPoint(path, data) {
   });
   return request.data; // return request or request.data.....
 }
+
+export async function deletePrivateEndPointById(path, id) {
+  const request = await axios.delete(`${baseUrl + path}/${id}`, {
+    headers,
+  });
+  return request.data; // return request or request.data.....
+}
