@@ -30,3 +30,10 @@ export async function deletePrivateEndPointById(path, id) {
   });
   return request.data; // return request or request.data.....
 }
+
+export async function putPrivateEndPoint(path, id, data) {
+  const request = await axios.put(`${baseUrl + path}/${id}`, data, {
+    headers,
+  });
+  return request.data; // return request or request.data.....
+}
