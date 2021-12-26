@@ -9,10 +9,15 @@ export default function getHeaderAuthorization() {
   };
 }
 
+const headers = {
+  'Content-Type': 'application/json',
+  'Access-Control-Allow-Origin': '*',
+  'access-control-allow-methods': 'GET, PUT, PATCH, POST, DELETE, OPTIONS',
+  ...getHeaderAuthorization(),
+};
+
 export async function getPrivateById(url, id) {
   const targetURL = `${url}/${id}`;
-  const request = await axios.get(targetURL, {
-    headers: getHeaderAuthorization(),
-  });
+  const request = await axios.get(targetURL, headers);
   return request.data.data;
 }
