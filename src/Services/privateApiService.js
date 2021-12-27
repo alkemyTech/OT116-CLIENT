@@ -14,8 +14,8 @@ const headers = {
   'Content-Type': 'application/json',
   'Access-Control-Allow-Origin': '*',
   'access-control-allow-methods': 'GET, PUT, POST, DELETE, OPTIONS',
-  Authorization: getHeaderAuthorization(),
-}; // import headers from the right palce
+  ...getHeaderAuthorization(),
+}; // import headers from the right place
 
 export async function postPrivateEndPoint(path, data) {
   const request = await axios.post(baseUrl + path, data, {
