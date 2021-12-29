@@ -21,3 +21,9 @@ export async function getPrivateById(url, id) {
   const request = await axios.get(targetURL, headers);
   return request.data.data;
 }
+
+export async function patchPrivateById(url, id, body) {
+  const targetURL = `${url}/${id}`;
+  const request = await axios.patch(targetURL, body, headers);
+  return request.data.data;
+}
