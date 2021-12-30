@@ -9,13 +9,25 @@ export default function getHeaderAuthorization() {
   };
 }
 
-const baseUrl = 'http://ongapi.alkemy.org/api/'; // import from the right place.
+const baseUrl = 'http://ongapi.alkemy.org/api/';
 const headers = {
   'Content-Type': 'application/json',
   'Access-Control-Allow-Origin': '*',
-  'access-control-allow-methods': 'GET, PUT, POST, DELETE, OPTIONS',
+  'access-control-allow-methods': 'GET, PUT, PATCH, POST, DELETE, OPTIONS',
   ...getHeaderAuthorization(),
-}; // import headers from the right place
+};
+
+export async function getPrivateById(url, id) {
+  const targetURL = `${url}/${id}`;
+  const request = await axios.get(targetURL, headers);
+  return request.data.data;
+}
+
+export async function patchPrivateById(url, id, body) {
+  const targetURL = `${url}/${id}`;
+  const request = await axios.patch(targetURL, body, headers);
+  return request.data.data;
+}
 
 export async function postPrivateEndPoint(path, data) {
   const request = await axios.post(baseUrl + path, data, {
