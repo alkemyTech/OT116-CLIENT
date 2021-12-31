@@ -5,7 +5,7 @@ const baseURL = 'http://ongapi.alkemy.org/api/activities';
 
 export const getAllActivities = async () => {
   try {
-    return await getEndpoint('/activities');
+    return await getEndpoint('activities');
   } catch (error) {
     throw new Error(error);
   }
@@ -19,9 +19,9 @@ export const getActivityById = async (id) => {
   }
 };
 
-export const updateActivityById = async (id) => {
+export const updateActivityById = async (id, updatedActivty) => {
   try {
-    return await patchPrivateById(baseURL, id);
+    return await patchPrivateById(baseURL, id, updatedActivty);
   } catch (error) {
     throw new Error(error);
   }

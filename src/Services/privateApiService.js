@@ -12,7 +12,7 @@ export default function getHeaderAuthorization() {
 const headers = {
   'Content-Type': 'application/json',
   'Access-Control-Allow-Origin': '*',
-  'access-control-allow-methods': 'GET, PUT, PATCH, POST, DELETE, OPTIONS',
+  'Access-Control-Allow-Methods': 'GET, PUT, PATCH, POST, DELETE, OPTIONS',
   ...getHeaderAuthorization(),
 };
 
