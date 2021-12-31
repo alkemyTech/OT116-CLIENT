@@ -19,7 +19,7 @@ export const getActivityById = async (id) => {
   }
 };
 
-export const updateActivity = async (id) => {
+export const updateActivityById = async (id) => {
   try {
     return await patchPrivateById(baseURL, id);
   } catch (error) {
