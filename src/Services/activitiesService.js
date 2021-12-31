@@ -19,9 +19,9 @@ export const getActivityById = async (id) => {
   }
 };
 
-export const updateActivityById = async (id) => {
+export const updateActivityById = async (id, updatedActivity) => {
   try {
-    return await patchPrivateById(baseURL, id);
+    return await patchPrivateById(baseURL, id, updatedActivity);
   } catch (error) {
     throw new Error(error);
   }
