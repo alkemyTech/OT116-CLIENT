@@ -1,11 +1,23 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { getAllActivities, updateActivityById } from '../../Services/activitiesService';
+import {
+  getAllActivities,
+  getActivityById,
+  updateActivityById,
+} from '../../Services/activitiesService';
 
-const getActivities = createAsyncThunk('activities/getActivities', getAllActivities);
+const getActivities = createAsyncThunk(
+  'activities/getActivities',
+  getAllActivities,
+);
 
-const updateActivity = createAsyncThunk('activities/updateActivity', async ({ id, updActivity }) => {
-  const req = await updateActivityById(id, updActivity);
-  return req;
-});
+const getActivity = createAsyncThunk('activities/getActivity', getActivityById);
 
-export { getActivities, updateActivity };
+const updateActivity = createAsyncThunk(
+  'activities/updateActivity',
+  async ({ id, data }) => {
+    const req = await updateActivityById(id, data);
+    return req;
+  },
+);
+
+export { getActivities, getActivity, updateActivity };
