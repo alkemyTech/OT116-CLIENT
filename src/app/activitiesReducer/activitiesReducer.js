@@ -1,5 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getActivities, getActivity, updateActivity } from './activitiesActions';
+import {
+  createActivity,
+  deleteActivity,
+  getActivities,
+  getActivity,
+  updateActivity,
+} from './activitiesActions';
 
 const initialState = {
   status: null,
@@ -14,24 +20,18 @@ const activitiesSlice = createSlice({
   reducer: {},
   extraReducers: (builder) => {
     builder
-      // getActivities Actions
-      .addCase(getActivities.pending, (state) => ({ ...state, status: 'Loading' }))
+      // getActivities Case
       .addCase(getActivities.fulfilled, (state, action) => ({
         ...state,
         status: 'Success',
+        error: null,
         activities: action.payload,
       }))
-      .addCase(getActivities.rejected, (state, action) => ({
-        ...state,
-        status: 'Failed',
-        error: action?.error.message,
+      // getActivity Case
+      .addCase(getActivity.fulfilled, (state, action) => ({
+        ...state, status: 'Success', error: null, activity: action.payload,
       }))
-      // getActivity Actions
-      .addCase(getActivity.pending, (state) => ({ ...state, status: 'Loading' }))
-      .addCase(getActivity.fulfilled, (state, action) => ({ ...state, status: 'Success', activity: action.payload }))
-      .addCase(getActivity.rejected, (state, action) => ({ ...state, status: 'Failed', error: action?.error.message }))
-      // updateActivity Actions
-      .addCase(updateActivity.pending, (state) => ({ ...state, status: 'Loading' }))
+      // updateActivity Case
       .addCase(updateActivity.fulfilled, (state, action) => {
         const updatedActivities = state.activities.map((activity) => (
           activity.id === action.payload.id
@@ -42,9 +42,24 @@ const activitiesSlice = createSlice({
           ...state,
           status: 'Success',
           activities: updatedActivities,
+          error: null,
         };
       })
-      .addCase(updateActivity.rejected, (state, action) => ({
+      // addActivity Case
+      .addCase(createActivity.fulfilled, (state, action) => ({
+        ...state,
+        status: 'Success',
+        activities: state.activities.concat(action.payload),
+        error: null,
+      }))
+      // deleteActivity Case
+      .addCase(deleteActivity.fulfilled, (state) => ({
+        ...state,
+        status: 'Success',
+        error: null,
+      }))
+      .addMatcher((action) => action.type.includes('/pending'), (state) => ({ ...state, status: 'Loading', error: null }))
+      .addMatcher((action) => action.type.includes('/rejected'), (state, action) => ({
         ...state,
         error: action?.error.message,
         status: 'Failed',

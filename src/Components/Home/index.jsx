@@ -1,11 +1,13 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Slider from '../Slider/Slider';
 import arraySlides, { arraySlidesEscolar } from '../../constants/arraySliders';
 import configSlider, {
   configSliderEscolar,
 } from '../../constants/configSliders';
 import {
+  createActivity,
+  deleteActivity,
   getActivities,
   getActivity,
   updateActivity,
@@ -13,6 +15,10 @@ import {
 
 const Home = function () {
   const dispatch = useDispatch();
+  const store = useSelector((state) => state);
+
+  console.log(store);
+
   return (
     <>
       {/* <h1 style={{ textAlign: "center" }}>{welcomeText} </h1> */}
@@ -27,6 +33,10 @@ const Home = function () {
         </button>
         <button type="button" onClick={() => dispatch(getActivity(1030))}>
           GET ACTIVITY 1030
+        </button>
+        <button type="button" onClick={() => dispatch(createActivity({ description: 'dasdasd', name: 'testing post' }))}> CREATE </button>
+        <button type="button" onClick={() => dispatch(deleteActivity(1048))}>
+          Delete ACTIVITY 9999
         </button>
         <button
           type="button"

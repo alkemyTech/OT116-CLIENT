@@ -2,7 +2,9 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import {
   getAllActivities,
   getActivityById,
-  updateActivityById,
+  deleteActivityById,
+  addActivity,
+  patchActivityById,
 } from '../../Services/activitiesService';
 
 const getActivities = createAsyncThunk(
@@ -15,9 +17,19 @@ const getActivity = createAsyncThunk('activities/getActivity', getActivityById);
 const updateActivity = createAsyncThunk(
   'activities/updateActivity',
   async ({ id, data }) => {
-    const req = await updateActivityById(id, data);
+    const req = await patchActivityById(id, data);
     return req;
   },
 );
 
-export { getActivities, getActivity, updateActivity };
+const createActivity = createAsyncThunk('activities/addNewActivity', addActivity);
+
+const deleteActivity = createAsyncThunk('activities/deleteActivity', deleteActivityById);
+
+export {
+  getActivities,
+  getActivity,
+  updateActivity,
+  createActivity,
+  deleteActivity,
+};
