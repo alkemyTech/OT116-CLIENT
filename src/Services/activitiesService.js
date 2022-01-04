@@ -33,7 +33,8 @@ export const patchActivityById = async (id, updatedActivity) => {
 
 export const addActivity = async (data) => {
   try {
-    return await postPrivateEndPoint('activities', data);
+    const req = await postPrivateEndPoint('activities', data);
+    return req.data;
   } catch (error) {
     throw new Error(error);
   }
@@ -41,7 +42,8 @@ export const addActivity = async (data) => {
 
 export const deleteActivity = async (id) => {
   try {
-    return await deletePrivateEndPointById('activities', id);
+    const req = await deletePrivateEndPointById('activities', id);
+    return req;
   } catch (error) {
     throw new Error(error);
   }
