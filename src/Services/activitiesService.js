@@ -2,6 +2,7 @@ import {
   deletePrivateEndPointById,
   getPrivateById, patchPrivateById,
   postPrivateEndPoint,
+  putPrivateEndPoint,
 } from './privateApiService';
 import { getEndpoint } from '../Components/Services/publicApiServices';
 
@@ -9,7 +10,7 @@ const baseURL = 'http://ongapi.alkemy.org/api/activities';
 
 export const getAllActivities = async () => {
   try {
-    return await getEndpoint('/activities');
+    return await getEndpoint('activities');
   } catch (error) {
     throw new Error(error);
   }
@@ -40,10 +41,19 @@ export const addActivity = async (data) => {
   }
 };
 
-export const deleteActivity = async (id) => {
+export const deleteActivityById = async (id) => {
   try {
     const req = await deletePrivateEndPointById('activities', id);
     return req;
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
+export const updateActivityById = async (id, data) => {
+  try {
+    const req = await putPrivateEndPoint('activities', id, data);
+    return req.data;
   } catch (error) {
     throw new Error(error);
   }
