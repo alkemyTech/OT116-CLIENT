@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import Debounce from '../Search/Search';
-import { getEndpoint } from '../Services/publicApiServices';
+import { getEndpointById } from '../Services/publicApiServices';
 import { alertInfo } from './alerts';
 
 const ErrorAlert = () => {
   const getDataFromApi = () => {
-    getEndpoint('slides')
+    getEndpointById('slides', 100)
       .then((data) => console.log('data', data))
       .catch((err) => alertInfo('Ha ocurrido un error', err.message, 'error'));
   };
