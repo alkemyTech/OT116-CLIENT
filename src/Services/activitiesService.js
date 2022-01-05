@@ -1,6 +1,7 @@
 import {
   deletePrivateEndPointById,
-  getPrivateById, patchPrivateById,
+  getPrivateById,
+  patchPrivateById,
   postPrivateEndPoint,
   putPrivateEndPoint,
 } from './privateApiService';
