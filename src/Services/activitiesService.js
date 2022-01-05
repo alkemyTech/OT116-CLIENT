@@ -1,7 +1,6 @@
 import {
   deletePrivateEndPointById,
   getPrivateById,
-  putPrivateEndPoint,
   patchPrivateById,
   postPrivateEndPoint,
   putPrivateEndPoint,
