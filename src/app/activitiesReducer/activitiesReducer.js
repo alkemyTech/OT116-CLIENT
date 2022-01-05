@@ -58,6 +58,7 @@ const activitiesSlice = createSlice({
         status: 'Success',
         error: null,
       }))
+      // when a action is rejected or pending:
       .addMatcher((action) => action.type.includes('/pending'), (state) => ({ ...state, status: 'Loading', error: null }))
       .addMatcher((action) => action.type.includes('/rejected'), (state, action) => ({
         ...state,

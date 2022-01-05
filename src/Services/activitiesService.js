@@ -1,6 +1,8 @@
 import {
   deletePrivateEndPointById,
-  getPrivateById, patchPrivateById,
+  getPrivateById,
+  putPrivateEndPoint,
+  patchPrivateById,
   postPrivateEndPoint,
 } from './privateApiService';
 import { getEndpoint } from '../Components/Services/publicApiServices';
@@ -44,6 +46,15 @@ export const deleteActivityById = async (id) => {
   try {
     const req = await deletePrivateEndPointById('activities', id);
     return req;
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
+export const updateActivityById = async (id, data) => {
+  try {
+    const req = await putPrivateEndPoint('activities', id, data);
+    return req.data;
   } catch (error) {
     throw new Error(error);
   }
