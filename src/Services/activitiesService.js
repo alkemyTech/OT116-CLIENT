@@ -25,9 +25,9 @@ export const getActivityById = async (id) => {
   }
 };
 
-export const patchActivityById = async (id, updatedActivity) => {
+export const patchActivityById = async (id, data) => {
   try {
-    return await patchPrivateById(baseURL, id, updatedActivity);
+    return await patchPrivateById(baseURL, id, data);
   } catch (error) {
     throw new Error(error);
   }
