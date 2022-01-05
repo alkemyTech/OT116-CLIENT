@@ -4,6 +4,7 @@ import {
   putPrivateEndPoint,
   patchPrivateById,
   postPrivateEndPoint,
+  putPrivateEndPoint,
 } from './privateApiService';
 import { getEndpoint } from '../Components/Services/publicApiServices';
 
