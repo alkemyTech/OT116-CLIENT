@@ -2,7 +2,6 @@ import React from 'react';
 import Slider from '../Slider/Slider';
 import arraySlides, { arraySlidesEscolar } from '../../constants/arraySliders';
 import configSlider, { configSliderEscolar } from '../../constants/configSliders';
-import Progress from '../Progress/Progress';
 
 const Home = function () {
   return (
@@ -14,7 +13,6 @@ const Home = function () {
           margin: '0 auto',
         }}
       >
-        <Progress size={50} value={26} color="primary" circular />
         <Slider arraySlides={arraySlides} config={configSlider} />
         <Slider arraySlides={arraySlidesEscolar} config={configSliderEscolar} />
       </section>
