@@ -15,7 +15,7 @@ const Progress = ({
   if (!isLoading) return null;
 
   return (
-    <div style={{ maxWidth }}>
+    <div id="progress" style={{ maxWidth }}>
       {circular ? (
         <CircularProgress
           color={color}
