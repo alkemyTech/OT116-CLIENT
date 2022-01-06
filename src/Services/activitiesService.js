@@ -13,7 +13,7 @@ export const getAllActivities = async () => {
   try {
     return await getEndpoint('activities');
   } catch (error) {
-    throw new Error(error);
+    throw new Error(error?.message);
   }
 };
 
@@ -21,7 +21,7 @@ export const getActivityById = async (id) => {
   try {
     return await getPrivateById(baseURL, id);
   } catch (error) {
-    throw new Error(error);
+    throw new Error(error?.message);
   }
 };
 
@@ -29,7 +29,7 @@ export const patchActivityById = async (id, data) => {
   try {
     return await patchPrivateById(baseURL, id, data);
   } catch (error) {
-    throw new Error(error);
+    throw new Error(error?.message);
   }
 };
 
@@ -38,7 +38,7 @@ export const addActivity = async (data) => {
     const req = await postPrivateEndPoint('activities', data);
     return req.data;
   } catch (error) {
-    throw new Error(error);
+    throw new Error(error?.message);
   }
 };
 
@@ -47,7 +47,7 @@ export const deleteActivityById = async (id) => {
     const req = await deletePrivateEndPointById('activities', id);
     return req;
   } catch (error) {
-    throw new Error(error);
+    throw new Error(error?.message);
   }
 };
 
@@ -56,6 +56,6 @@ export const updateActivityById = async (id, data) => {
     const req = await putPrivateEndPoint('activities', id, data);
     return req.data;
   } catch (error) {
-    throw new Error(error);
+    throw new Error(error?.message);
   }
 };
