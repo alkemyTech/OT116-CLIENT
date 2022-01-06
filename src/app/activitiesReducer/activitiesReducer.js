@@ -14,6 +14,9 @@ const initialState = {
   error: null,
 };
 
+const isPending = (action) => action.type.endsWith('/pending');
+const isRejected = (action) => action.type.endsWith('/rejected');
+
 const activitiesSlice = createSlice({
   name: 'activitiesReducer',
   initialState,
@@ -59,8 +62,8 @@ const activitiesSlice = createSlice({
         error: null,
       }))
       // when a action is rejected or pending:
-      .addMatcher((action) => action.type.includes('/pending'), (state) => ({ ...state, status: 'Loading', error: null }))
-      .addMatcher((action) => action.type.includes('/rejected'), (state, action) => ({
+      .addMatcher(isPending, (state) => ({ ...state, status: 'Loading', error: null }))
+      .addMatcher(isRejected, (state, action) => ({
         ...state,
         error: action?.error.message,
         status: 'Failed',
