@@ -19,3 +19,7 @@ export const getEndpointById = async (path, id) => {
     throw error.response.data;
   }
 };
+
+export const postToEndpoint = async (path, data) => {
+  await axios.post((baseUrl + path), data);
+};
