@@ -9,7 +9,7 @@ export const newSlide = async (data) => {
     const response = await privateServices.postPrivateEndPoint(path, data);
     return response.data;
   } catch (error) {
-    throw new Error(error);
+    throw new Error(error?.message);
   }
 };
 
@@ -18,7 +18,7 @@ export const updateSlide = async (id, data) => {
     const response = await privateServices.putPrivateEndPoint(path, id, data);
     return response.data;
   } catch (error) {
-    throw new Error(error);
+    throw new Error(error?.message);
   }
 };
 
@@ -26,7 +26,7 @@ export const deleteSlide = async (id) => {
   try {
     return await privateServices.deletePrivateEndPointById(path, id);
   } catch (error) {
-    throw new Error(error);
+    throw new Error(error?.message);
   }
 };
 
@@ -34,7 +34,7 @@ export const getAllSlides = async () => {
   try {
     return await publicServices.getEndpoint(path);
   } catch (error) {
-    throw new Error(error);
+    throw new Error(error?.message);
   }
 };
 
@@ -42,7 +42,7 @@ export const getSlide = async (id) => {
   try {
     return await publicServices.getEndpointById(path, id);
   } catch (error) {
-    throw new Error(error);
+    throw new Error(error?.message);
   }
 };
 
@@ -50,7 +50,7 @@ export const getPrivateSlide = async (id) => {
   try {
     return await privateServices.getPrivateById(url, id);
   } catch (error) {
-    throw new Error(error);
+    throw new Error(error?.message);
   }
 };
 
@@ -58,6 +58,6 @@ export const patchSlide = async (id, data) => {
   try {
     return await privateServices.patchPrivateById(url, id, data);
   } catch (error) {
-    throw new Error(error);
+    throw new Error(error?.message);
   }
 };
