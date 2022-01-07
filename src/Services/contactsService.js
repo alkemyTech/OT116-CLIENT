@@ -27,7 +27,8 @@ export const getContactById = async (id) => {
 
 export const updateContactById = async (id, data) => {
   try {
-    return await putPrivateEndPoint(path, id, data);
+    const req = await putPrivateEndPoint(path, id, data);
+    return req.data;
   } catch (err) {
     throw new Error(err?.message);
   }
@@ -35,7 +36,8 @@ export const updateContactById = async (id, data) => {
 
 export const addContact = async (data) => {
   try {
-    return await postPrivateEndPoint(path, data);
+    const req = await postPrivateEndPoint(path, data);
+    return req.data;
   } catch (err) {
     throw new Error(err?.message);
   }
