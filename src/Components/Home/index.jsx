@@ -1,9 +1,7 @@
 import React from 'react';
 import Slider from '../Slider/Slider';
 import arraySlides, { arraySlidesEscolar } from '../../constants/arraySliders';
-import configSlider, {
-  configSliderEscolar,
-} from '../../constants/configSliders';
+import configSlider, { configSliderEscolar } from '../../constants/configSliders';
 
 const Home = function () {
   return (
