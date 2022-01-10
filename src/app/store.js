@@ -3,6 +3,7 @@ import slidesReducer from './slidesReducer/slidesReducer';
 import userReducer from './usersReducer/userReducer';
 import activitiesReducer from './activitiesReducer/activitiesReducer';
 import categoriesReducer from './categoriesReducer/categoriesReducer';
+import newsReducer from './newsReducer/newsReducer';
 
 const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ const store = configureStore({
     slides: slidesReducer,
     activities: activitiesReducer,
     categories: categoriesReducer,
+    news: newsReducer,
   },
 });
 
