@@ -16,7 +16,7 @@ const ActivitiesList = () => {
         <h1>Listado de Testimonios</h1>
       </div>
       <ul className="list-container">
-        {activities.length > 0
+        {activities && activities.length > 0
           ? activities.map((activity) => (
             <li className="card-info" key={activity.id}>
               <p>{activity.description}</p>
