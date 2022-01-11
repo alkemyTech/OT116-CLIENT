@@ -8,6 +8,9 @@ const initialState = {
   error: null,
 };
 
+const isPending = (action) => action.type.startsWith('slides/') && action.type.endsWith('/pending');
+const isRejected = (action) => action.type.startsWith('slides/') && action.type.endsWith('/rejected');
+
 const slidesSlice = createSlice({
   name: 'slidesReducer',
   initialState,
@@ -56,12 +59,12 @@ const slidesSlice = createSlice({
         error: null,
       }))
       // when a action is rejected or pending:
-      .addMatcher((action) => action.type.includes('/pending'), (state) => ({
+      .addMatcher(isPending, (state) => ({
         ...state,
         status: 'loading',
         error: null,
       }))
-      .addMatcher((action) => action.type.includes('/rejected'), (state, action) => ({
+      .addMatcher(isRejected, (state, action) => ({
         ...state,
         error: action?.error.message,
         status: 'failed',
