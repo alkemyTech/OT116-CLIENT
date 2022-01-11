@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   Input, FormGroup, FormHelperText,
 } from '@mui/material';
@@ -10,22 +10,32 @@ export const apiCalls = { getAllActivities: null, searchResults: null };
 const ActivitiesSearch = ({ maxWidth }) => {
   const [results, setResults] = useState([]);
   const [helperText, setHelperText] = useState('Porfavor Introduzca una Actividad');
+  const isMounted = useRef(null); // I use useRef to know when the component is mount
 
   const areResultsNotEmpty = results?.length > 0;
 
-  apiCalls.getAllActivities = async () => {
-    const allActivities = await getAllActivities();
-    setResults(allActivities);
-    setHelperText('Ingrese más de 3 caracteres');
-  };
+  useEffect(() => {
+    // When the component is mounted i set isMounted.current to true
+    isMounted.current = true;
+    apiCalls.getAllActivities = async () => {
+      if (isMounted.current) { // When isMounted.current is true it makes the api call.
+        const allActivities = await getAllActivities();
+        setResults(allActivities);
+        setHelperText('Ingrese más de 3 caracteres');
+      }
+    };
+    apiCalls.searchResults = async (value) => {
+      if (isMounted.current) { // When isMounted.current is true it makes the api call.
+        const searchResults = await searchActivityByTitle(value);
+        if (searchResults) {
+          setResults(searchResults);
+          setHelperText(`${searchResults.length} resultados con titulo: ${value}`);
+        }
+      }
+    };
 
-  apiCalls.searchResults = async (value) => {
-    const searchResults = await searchActivityByTitle(value);
-    if (searchResults) {
-      setResults(searchResults);
-      setHelperText(`${searchResults.length} resultados con titulo: ${value}`);
-    }
-  };
+    return () => { isMounted.current = false; }; // At the dismount set isMounted.current to false
+  }, []);
 
   const handleSearch = debounce(async ({ target }) => {
     try {

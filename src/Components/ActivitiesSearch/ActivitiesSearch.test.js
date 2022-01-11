@@ -16,7 +16,7 @@ describe('<ActivitiesSearch /> Testing', () => {
     component = render(<ActivitiesSearch />);
   });
 
-  afterEach(() => cleanup);
+  afterEach(() => cleanup());
 
   describe('<Input /> Tests', () => {
     it('should render input with empty value', () => {
