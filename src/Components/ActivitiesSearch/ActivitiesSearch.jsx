@@ -5,26 +5,33 @@ import {
 import { debounce } from 'lodash';
 import { getAllActivities, searchActivityByTitle } from '../../Services/activitiesService';
 
+export const apiCalls = { getAllActivities: null, searchResults: null };
+
 const ActivitiesSearch = ({ maxWidth }) => {
   const [results, setResults] = useState([]);
   const [helperText, setHelperText] = useState('Porfavor Introduzca una Actividad');
 
   const areResultsNotEmpty = results?.length > 0;
 
+  apiCalls.getAllActivities = async () => {
+    const allActivities = await getAllActivities();
+    setResults(allActivities);
+    setHelperText('Ingrese más de 3 caracteres');
+  };
+
+  apiCalls.searchResults = async (value) => {
+    const searchResults = await searchActivityByTitle(value);
+    if (searchResults) {
+      setResults(searchResults);
+      setHelperText(`${searchResults.length} resultados con titulo: ${value}`);
+    }
+  };
+
   const handleSearch = debounce(async ({ target }) => {
     try {
       const actualSearchValue = target.value;
-      if (actualSearchValue.length <= 3) {
-        const allActivities = await getAllActivities();
-        setResults(allActivities);
-        setHelperText('Ingrese más de 3 caracteres');
-      } else {
-        const searchResults = await searchActivityByTitle(actualSearchValue);
-        if (searchResults) {
-          setResults(searchResults);
-          setHelperText(`${searchResults.length} resultados con titulo: ${actualSearchValue}`);
-        }
-      }
+      if (actualSearchValue.length <= 3) apiCalls.getAllActivities();
+      else apiCalls.searchResults(actualSearchValue);
     } catch (error) {
       // Reemplazar con alerta de error cuando este implementada.
       console.error(error?.message);
