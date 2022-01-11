@@ -21,5 +21,10 @@ export const getEndpointById = async (path, id) => {
 };
 
 export const postToEndpoint = async (path, data) => {
-  await axios.post((baseUrl + path), data);
+  try {
+    const res = await axios.post(`${baseUrl}${path}`, data);
+    return res.data.data;
+  } catch (error) {
+    throw error.response.data;
+  }
 };
