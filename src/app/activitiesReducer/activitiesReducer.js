@@ -14,8 +14,8 @@ const initialState = {
   error: null,
 };
 
-const isPending = (action) => action.type.endsWith('/pending');
-const isRejected = (action) => action.type.endsWith('/rejected');
+const isPending = (action) => action.type.startsWith('activities/') && action.type.endsWith('/pending');
+const isRejected = (action) => action.type.startsWith('activities/') && action.type.endsWith('/rejected');
 
 const activitiesSlice = createSlice({
   name: 'activitiesReducer',
