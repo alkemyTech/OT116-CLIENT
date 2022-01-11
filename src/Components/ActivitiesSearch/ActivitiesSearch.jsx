@@ -9,6 +9,8 @@ const ActivitiesSearch = ({ maxWidth }) => {
   const [results, setResults] = useState([]);
   const [helperText, setHelperText] = useState('Porfavor Introduzca una Actividad');
 
+  const areResultsNotEmpty = results?.length > 0;
+
   const handleSearch = debounce(async ({ target }) => {
     try {
       const actualSearchValue = target.value;
@@ -33,19 +35,24 @@ const ActivitiesSearch = ({ maxWidth }) => {
     <div>
       <FormGroup>
         <Input
+          inputProps={{ 'data-testid': 'input' }}
           onChange={handleSearch}
           placeholder="Nombre de actividad"
           sx={{ maxWidth }}
         />
-        <FormHelperText color="danger">{helperText}</FormHelperText>
+        <FormHelperText data-testid="helperText">{helperText}</FormHelperText>
       </FormGroup>
-      <ul>
-        { // Esto es un mapeado de prueba.
+      {
+        areResultsNotEmpty && (
+        <ul data-testid="results-list">
+          { // Esto es un mapeado de prueba.
           results?.map((activity) => (
             <li key={activity.id}>{activity?.name}</li>
           ))
         }
-      </ul>
+        </ul>
+        )
+      }
     </div>
   );
 };
