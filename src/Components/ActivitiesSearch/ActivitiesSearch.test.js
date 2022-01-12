@@ -3,7 +3,6 @@ import {
   render,
   act,
   cleanup,
-  fireEvent,
   waitFor,
 } from '@testing-library/react';
 import ActivitiesSearch, { apiCalls } from './ActivitiesSearch';
@@ -51,11 +50,10 @@ describe('<ActivitiesSearch /> Testing', () => {
       act(() => {
         userEvent.type(input, 'chs'); // Simulate user typing "chs"
       });
-
-      await waitFor(() =>
+      await waitFor(() =>{
       // Expect that text content of helper text element to be expectedText
-        expect(screen.getByTestId('helperText').textContent).toBe(expectedText),
-      );
+        expect(screen.getByTestId('helperText').textContent).toBe(expectedText);
+      });
     });
 
     it('when input value characters are more than 3 helper text shows a message', async () => {
@@ -67,10 +65,10 @@ describe('<ActivitiesSearch /> Testing', () => {
         userEvent.type(input, inputWord); // Simulate user typing inputWord
       });
 
-      await waitFor(() =>
+      await waitFor(() => {
       // Expect that text content of helper text element to be expectedText
-        expect(screen.getByTestId('helperText').textContent).toBe(expectedText)
-      );
+        expect(screen.getByTestId('helperText').textContent).toBe(expectedText);
+      });
     });
   });
 
@@ -90,16 +88,16 @@ describe('<ActivitiesSearch /> Testing', () => {
         // I wait for the debounce time and then expect to mockedGetActivitiesFunction to have been called once
         expect(mockedGetActivitiesFunction).toHaveBeenCalledTimes(1),
       ); 
-      await waitFor(() =>
+      await waitFor(() =>{
         // I wait for the the debounce time as well and expect to results list to be render in the document.  
-        expect(screen.queryByTestId('results-list')).toBeInTheDocument(),
-      ); 
+        expect(screen.queryByTestId('results-list')).toBeInTheDocument();
+      }); 
     });
 
     it('should call api method searchActivitiyByTitle when input change and input value characters are more than 3', async () => {
       const input = screen.getByTestId('input'); //  I save the input.
       const inputWord = 'taller de manualidades'; //  I save the input word.
-      const mockedSearchFunction = jest.spyOn(apiCalls, 'searchResults'); //  I tell to jest to spy the function searchResults from apiCalls object and save it at mockedSearchFunction
+      const mockedSearchFunction = jest.spyOn(apiCalls, 'searchResults'); //  I tell to jest to spy the function searchResults from apiCalls object and save it at mockedSearchFunction.
 
       act(() => {
         userEvent.type(input, inputWord); // Simulate user typing inputWord
