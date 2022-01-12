@@ -14,22 +14,11 @@ export const getAllUsers = async () => {
 export const postUser = async (data) => {
   try {
     const response = await privateServices.postPrivateEndPoint(path, data);
-    console.log(response);
     return response.data;
   } catch (error) {
     throw new Error(error?.message);
   }
 };
-
-// export const postUser = async (data) => {
-//   try {
-//     const response = await publicServices.postToEndpoint(path, data);
-//     console.log(response);
-//     return response.data;
-//   } catch (error) {
-//     throw new Error(error?.message);
-//   }
-// };
 
 export const getUserById = async (id) => {
   try {
