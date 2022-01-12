@@ -7,46 +7,47 @@ import { getAllActivities, searchActivityByTitle } from '../../Services/activiti
 
 export const apiCalls = { getAllActivities: null, searchResults: null };
 
-const ActivitiesSearch = ({ maxWidth }) => {
+const ActivitiesSearch = ({ maxWidth = 'auto' }) => {
   const [results, setResults] = useState([]);
   const [helperText, setHelperText] = useState('Porfavor Introduzca una Actividad');
-  const isMounted = useRef(null); // I use useRef to know when the component is mount
+  const isMounted = useRef(null);
 
   const areResultsNotEmpty = results?.length > 0;
 
   useEffect(() => {
-    // When the component is mounted i set isMounted.current to true
     isMounted.current = true;
-    apiCalls.getAllActivities = async () => {
-      if (isMounted.current) { // When isMounted.current is true it makes the api call.
-        const allActivities = await getAllActivities();
-        setResults(allActivities);
-        setHelperText('Ingrese más de 3 caracteres');
-      }
+    apiCalls.getAllActivities = () => {
+      getAllActivities().then((allActivities) => {
+        if (isMounted.current && allActivities) {
+          setResults(allActivities);
+          setHelperText('Ingrese más de 3 caracteres');
+        }
+      });
     };
-    apiCalls.searchResults = async (value) => {
-      if (isMounted.current) { // When isMounted.current is true it makes the api call.
-        const searchResults = await searchActivityByTitle(value);
-        if (searchResults) {
+    apiCalls.searchResults = (value) => {
+      searchActivityByTitle(value).then((searchResults) => {
+        if (isMounted.current && searchResults) {
           setResults(searchResults);
           setHelperText(`${searchResults.length} resultados con titulo: ${value}`);
         }
-      }
+      });
     };
 
-    return () => { isMounted.current = false; }; // At the dismount set isMounted.current to false
+    return () => {
+      isMounted.current = false;
+    };
   }, []);
 
   const handleSearch = debounce(async ({ target }) => {
     try {
       const actualSearchValue = target.value;
-      if (actualSearchValue.length <= 3) apiCalls.getAllActivities();
-      else apiCalls.searchResults(actualSearchValue);
+      if (actualSearchValue.length <= 3) await apiCalls.getAllActivities();
+      else await apiCalls.searchResults(actualSearchValue);
     } catch (error) {
       // Reemplazar con alerta de error cuando este implementada.
       console.error(error?.message);
     }
-  }, 500);
+  }, 500, { leading: true, trailing: false });
 
   return (
     <div>

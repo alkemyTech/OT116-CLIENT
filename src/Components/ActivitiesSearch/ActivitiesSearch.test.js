@@ -3,10 +3,10 @@ import {
   render,
   act,
   cleanup,
+  fireEvent,
   waitFor,
 } from '@testing-library/react';
 import ActivitiesSearch, { apiCalls } from './ActivitiesSearch';
-import userEvent from '@testing-library/user-event';
 
 describe('<ActivitiesSearch /> Testing', () => {
   let component;
@@ -29,7 +29,7 @@ describe('<ActivitiesSearch /> Testing', () => {
       const input = screen.getByTestId('input'); // I save the input element
       const inputWord = 'chs'; // I save the input word
       act(() => {
-        userEvent.type(input, inputWord); // Simulate user typing inputWord
+        fireEvent.change(input, {target: {value: inputWord}}); ; // Simulate user typing inputWord
       });
 
       expect(input.value).toBe(inputWord); // I expect to input value to be inputWord.
@@ -48,12 +48,10 @@ describe('<ActivitiesSearch /> Testing', () => {
       const input = screen.getByTestId('input'); // i save the input element
       const expectedText = 'Ingrese más de 3 caracteres'; // i save the expected text
       act(() => {
-        userEvent.type(input, 'chs'); // Simulate user typing "chs"
+        fireEvent.change(input, {target: {value: 'chs'}}); // Simulate user typing "chs"
       });
-      await waitFor(() =>{
       // Expect that text content of helper text element to be expectedText
-        expect(screen.getByTestId('helperText').textContent).toBe(expectedText);
-      });
+      await waitFor(() => expect(screen.getByTestId('helperText').textContent).toBe(expectedText));
     });
 
     it('when input value characters are more than 3 helper text shows a message', async () => {
@@ -62,13 +60,11 @@ describe('<ActivitiesSearch /> Testing', () => {
       const expectedText = `0 resultados con titulo: ${inputWord}`; // i save the expected text;
 
       act(() => {
-        userEvent.type(input, inputWord); // Simulate user typing inputWord
+        fireEvent.change(input, {target: {value: inputWord}});  // Simulate user typing inputWord
       });
 
-      await waitFor(() => {
       // Expect that text content of helper text element to be expectedText
-        expect(screen.getByTestId('helperText').textContent).toBe(expectedText);
-      });
+      await waitFor(() => expect(screen.getByTestId('helperText').textContent).toBe(expectedText));
     });
   });
 
@@ -81,39 +77,33 @@ describe('<ActivitiesSearch /> Testing', () => {
       ); //  I tell to jest to spy the function getAllActivities from apiCalls object and save it at mockedGetActivitiesFunction
 
       act(() => {
-        userEvent.type(input, 'chs'); // Simulate user typing "chs"
+        fireEvent.change(input, {target: {value: 'chs'}});  // Simulate user typing "chs"
       });
 
-      await waitFor(() =>
+     
         // I wait for the debounce time and then expect to mockedGetActivitiesFunction to have been called once
-        expect(mockedGetActivitiesFunction).toHaveBeenCalledTimes(1),
-      ); 
-      await waitFor(() =>{
+        await waitFor(() => expect(mockedGetActivitiesFunction).toHaveBeenCalledTimes(1));     
         // I wait for the the debounce time as well and expect to results list to be render in the document.  
-        expect(screen.queryByTestId('results-list')).toBeInTheDocument();
-      }); 
+        await waitFor(() => expect(screen.queryByTestId('results-list')).toBeInTheDocument());
     });
 
     it('should call api method searchActivitiyByTitle when input change and input value characters are more than 3', async () => {
-      const input = screen.getByTestId('input'); //  I save the input.
+     
       const inputWord = 'taller de manualidades'; //  I save the input word.
       const mockedSearchFunction = jest.spyOn(apiCalls, 'searchResults'); //  I tell to jest to spy the function searchResults from apiCalls object and save it at mockedSearchFunction.
 
       act(() => {
-        userEvent.type(input, inputWord); // Simulate user typing inputWord
+        const input = screen.getByTestId('input'); //  I save the input.
+        fireEvent.change(input, {target: {value: inputWord}}); // Simulate user typing inputWord
       });
-
-      await waitFor(() => {
-        // I wait for the debounce time and then expect to mockedSearchResultsFunction to have been called once
-        expect(mockedSearchFunction).toHaveBeenCalledTimes(1); 
-        //And expect to mockedSearchResultsFunction to have been with inputWord as parameter
-        expect(mockedSearchFunction).toHaveBeenCalledWith(inputWord);
-      });
-
-      await waitFor(() => {
-       // I wait for the debounce time as well and expect to results list to be render in the document.  
-        expect(screen.queryByTestId('results-list')).toBeInTheDocument();
-      })
+        // I wait for the debounce time and then expect to mockedSearchResultsFunction to have been called once with the input word
+        await waitFor(() => {
+          expect(mockedSearchFunction).toHaveBeenCalledTimes(1)
+          expect(mockedSearchFunction).toHaveBeenCalledWith(inputWord);
+        });
+        const resultList = await screen.findByTestId('results-list');
+        
+        expect(resultList).toBeInTheDocument();
     });
   });
 });
