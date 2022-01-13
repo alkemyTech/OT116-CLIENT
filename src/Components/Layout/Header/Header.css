@@ -1,0 +1,13 @@
+.active{
+  font-weight: bold;
+}
+
+.navlink{
+  text-decoration: none;
+  color: #095fa5;
+  border-bottom: 2px solid transparent;
+}
+
+.navlink:hover {
+  border-color: inherit;
+}
