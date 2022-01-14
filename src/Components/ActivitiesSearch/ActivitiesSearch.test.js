@@ -51,8 +51,6 @@ describe('<ActivitiesSearch /> Testing', () => {
      
         // I wait for the debounce time and then expect to mockedGetActivitiesFunction to have been called once
         await waitFor(() => expect(mockedGetActivitiesFunction).toHaveBeenCalledTimes(1));     
-        // I wait for the the debounce time as well and expect to results list to be render in the document.  
-        await waitFor(() => expect(screen.queryByTestId('results-list')).toBeInTheDocument());
     });
 
     it('should call api method searchActivitiyByTitle when input change and input value characters are more than 3', async () => {
@@ -69,9 +67,6 @@ describe('<ActivitiesSearch /> Testing', () => {
           expect(mockedSearchFunction).toHaveBeenCalledTimes(1)
           expect(mockedSearchFunction).toHaveBeenCalledWith(inputWord);
         });
-        const resultList = await screen.findByTestId('results-list');
-        
-        expect(resultList).toBeInTheDocument();
     });
   });
 });

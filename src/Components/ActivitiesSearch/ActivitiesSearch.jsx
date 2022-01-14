@@ -62,7 +62,7 @@ const ActivitiesSearch = ({ maxWidth = 'auto' }) => {
       </FormGroup>
       {
         areResultsNotEmpty && (
-        <ul data-testid="results-list">
+        <ul>
           { // Esto es un mapeado de prueba.
           results?.map((activity) => (
             <li key={activity.id}>{activity?.name}</li>
