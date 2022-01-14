@@ -2,13 +2,15 @@ header {
   padding-block: 2rem;
   display: flex;
   justify-content: space-evenly;
+  width: 100%;
   align-items: center;
-  max-height: 70px;
+  gap: 1rem;
+  max-height: 50px;
   background: #ff79614f;
 }
 
 .campaign_logo {
-  max-width: 80px;
+  max-width: 60px;
 }
 
 .campaign_slogan {
@@ -19,7 +21,7 @@ header {
 }
 
 .ong_logo {
-  max-width: 100px;
+  max-width: 80px;
   display: none;
 }
 

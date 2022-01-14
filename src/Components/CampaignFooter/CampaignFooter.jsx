@@ -24,6 +24,22 @@ const CampaignFooter = ({ campaignsList = [] }) => {
         </Link>
       </div>
 
+      <div className="campaigns">
+        <h2>Campañas:</h2>
+
+        {isCampaignListNotEmpty && isCampaignListValid ? (
+          <ul className="campaigns__list">
+            {campaignsList?.map(({ name, url }) => (
+              <li key={name}>
+                <Link to={url}>{name}</Link>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <h3>No hay más Campañas</h3>
+        )}
+      </div>
+
       <ul className="socials__list">
         <li>
           <a
@@ -56,22 +72,6 @@ const CampaignFooter = ({ campaignsList = [] }) => {
           </a>
         </li>
       </ul>
-
-      <div className="campaigns">
-        <h2>Campañas:</h2>
-
-        {isCampaignListNotEmpty && isCampaignListValid ? (
-          <ul className="campaigns__list">
-            {campaignsList?.map(({ name, url }) => (
-              <li key={name}>
-                <Link to={url}>{name}</Link>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <h3>No hay más Campañas</h3>
-        )}
-      </div>
     </footer>
   );
 };
