@@ -23,7 +23,7 @@ const ActivitiesList = () => {
               <h4>{activity.description}</h4>
             </li>
           ))
-          : null}
+          : <p>No hay actividad para mostrar</p>}
       </ul>
     </div>
   );
