@@ -36,38 +36,6 @@ describe('<ActivitiesSearch /> Testing', () => {
     });
   });
 
-  describe('<FormHelperText /> Test', () => {
-    it('should helper text show a initial text', () => {
-      const helperText = screen.getByTestId('helperText'); // i save the helperText element
-      const initialText = 'Porfavor Introduzca una Actividad'; // i save the initial text i expect to helperText element have.
-
-      expect(helperText.textContent).toBe(initialText); // I expect the helperText element text content to be equal to the value saved at initial text.
-    });
-
-    it('when input value characters are less or equal than 3 helper text shows a message', async () => {
-      const input = screen.getByTestId('input'); // i save the input element
-      const expectedText = 'Ingrese más de 3 caracteres'; // i save the expected text
-      act(() => {
-        fireEvent.change(input, {target: {value: 'chs'}}); // Simulate user typing "chs"
-      });
-      // Expect that text content of helper text element to be expectedText
-      await waitFor(() => expect(screen.getByTestId('helperText').textContent).toBe(expectedText));
-    });
-
-    it('when input value characters are more than 3 helper text shows a message', async () => {
-      const input = screen.getByTestId('input'); // i save the input element
-      const inputWord = 'chss'; // i save the input word
-      const expectedText = `0 resultados con titulo: ${inputWord}`; // i save the expected text;
-
-      act(() => {
-        fireEvent.change(input, {target: {value: inputWord}});  // Simulate user typing inputWord
-      });
-
-      // Expect that text content of helper text element to be expectedText
-      await waitFor(() => expect(screen.getByTestId('helperText').textContent).toBe(expectedText));
-    });
-  });
-
   describe('API Calls Test', () => {
     it('should call api method getAllActivities when input change and input value characters are less than 3', async () => {
       const input = screen.getByTestId('input'); //  I save the input.

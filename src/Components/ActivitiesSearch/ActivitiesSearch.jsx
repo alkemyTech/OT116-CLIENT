@@ -58,7 +58,7 @@ const ActivitiesSearch = ({ maxWidth = 'auto' }) => {
           placeholder="Nombre de actividad"
           sx={{ maxWidth }}
         />
-        <FormHelperText data-testid="helperText">{helperText}</FormHelperText>
+        <FormHelperText>{helperText}</FormHelperText>
       </FormGroup>
       {
         areResultsNotEmpty && (
