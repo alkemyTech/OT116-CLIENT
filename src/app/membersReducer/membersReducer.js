@@ -15,6 +15,8 @@ const initialState = {
   error: null,
 };
 
+const success = 'Success';
+
 const membersSlice = createSlice({
   name: 'membersReducer',
   initialState,
@@ -23,12 +25,12 @@ const membersSlice = createSlice({
     builder
       .addCase(getMembers.fulfilled, (state, action) => ({
         ...state,
-        status: 'Successed',
+        status: { success },
         error: null,
         members: action.payload,
       }))
       .addCase(getMemberbyId.fulfilled, (state, action) => ({
-        ...state, status: 'Successed', error: null, member: action.payload,
+        ...state, status: { success }, error: null, member: action.payload,
       }))
       .addCase(updateMember.fulfilled, (state, action) => {
         const updatedmembers = state.members.map((member) => (
@@ -38,20 +40,20 @@ const membersSlice = createSlice({
         ));
         return {
           ...state,
-          status: 'Successed',
+          status: { success },
           members: updatedmembers,
           error: null,
         };
       })
       .addCase(createMember.fulfilled, (state, action) => ({
         ...state,
-        status: 'Successed',
+        status: { success },
         members: state.members.concat(action.payload),
         error: null,
       }))
       .addCase(deleteMember.fulfilled, (state) => ({
         ...state,
-        status: 'Successed',
+        status: { success },
         error: null,
       }))
       .addMatcher(isPending, (state) => ({ ...state, status: 'Loading', error: null }))

@@ -34,7 +34,7 @@ const MembersModiList = function () {
     }
   }, [status, dispatch]);
 
-  let content;
+  let content = <h4>No elements</h4>;
 
   if (status === 'Loading') {
     content = <p style={{ textAlign: 'center' }}>Loading...</p>;
@@ -66,9 +66,9 @@ const MembersModiList = function () {
     <section>
       <button type="button" onClick={() => dispatch(getMembers())}>Ver todos los miembros</button>
       <button type="button" onClick={() => dispatch(createMember, (newMember))}>Crear miembro</button>
-      <button type="button" onClick={() => dispatch(updateMember, ({ id: 457, member: memberToUpdate }))}>Actualizar usuario</button>
-      <button type="button" onClick={() => dispatch(getMemberbyId(457))}>Ver usuario por Id</button>
-      <button type="button" onClick={() => dispatch(deleteMember(457))}>Eliminar usuario</button>
+      <button type="button" onClick={() => dispatch(updateMember, ({ id: 457, member: memberToUpdate }))}>Actualizar miembro</button>
+      <button type="button" onClick={() => dispatch(getMemberbyId(457))}>Ver miembro por Id</button>
+      <button type="button" onClick={() => dispatch(deleteMember(457))}>Eliminar miembro</button>
       <h2>Members</h2>
       {content}
     </section>
