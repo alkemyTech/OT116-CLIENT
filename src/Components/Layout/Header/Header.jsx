@@ -1,12 +1,18 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Button, Container, Stack } from '@mui/material';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import ONGLogo from '../../../Assets/Logo/logo.png';
 import './Header.css';
+import { logout } from '../../../app/authReducer/authReducer';
 
 const Header = function () {
   const { isAuthenticated } = useSelector(({ auth }) => auth);
+  const dispatch = useDispatch();
+  const { push } = useHistory();
+
+  const handleLogout = () => dispatch(logout());
+
   return (
     <Container
       as="header"
@@ -39,11 +45,11 @@ const Header = function () {
 
       <Stack spacing={2} direction="row">
 
-        {isAuthenticated ? <Button color="error" variant="contained">Log Out</Button>
+        {isAuthenticated ? <Button onClick={handleLogout} color="error" variant="contained">Log Out</Button>
           : (
             <>
-              <Button>Log In</Button>
-              <Button variant="contained">Register</Button>
+              <Button onClick={() => push('/login')}>Log In</Button>
+              <Button onClick={() => push('/register')} variant="contained">Register</Button>
             </>
           )}
       </Stack>
