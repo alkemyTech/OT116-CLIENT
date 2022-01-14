@@ -1,17 +1,13 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import * as getAllActivities from '../../app/activitiesReducer/activitiesActions';
+import * as getActivities from '../../app/activitiesReducer/activitiesActions';
 import './ActiviesList.css';
-import ErrorAlert from '../Alerts/ErrorAlert';
 
 const ActivitiesList = () => {
-  const { activities } = useSelector((state) => state);
+  const { activities } = useSelector((state) => state.activities);
   const dispatch = useDispatch();
-
   useEffect(() => {
-    dispatch(getAllActivities()).catch(() => {
-      ErrorAlert('No hay actividades disponibles');
-    });
+    dispatch(getActivities.getActivities());
   }, []);
 
   return (
@@ -20,10 +16,11 @@ const ActivitiesList = () => {
         <h1>Listado de Testimonios</h1>
       </div>
       <ul className="list-container">
-        {activities.length
+        {activities && activities.length > 0
           ? activities.map((activity) => (
             <li className="card-info" key={activity.id} activity={activity}>
-              <p>{activity.description}</p>
+              <h3>{activity.name}</h3>
+              <h4>{activity.description}</h4>
             </li>
           ))
           : null}

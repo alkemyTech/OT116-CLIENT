@@ -6,11 +6,12 @@ justify-content: center;
 .list-container{
     display: flex;
     justify-content: space-around;
+    gap: 100px;
 }
 
 .card-info{
     list-style: none;
-    padding: 30px 50px;
+    padding: 40px 45px;
     border-radius: 30px;
     background-color: #c0f6a1;
 }
