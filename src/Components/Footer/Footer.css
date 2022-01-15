@@ -1,0 +1,26 @@
+
+:root {
+  --primaryColor : #345aa6;
+  --hoverColor: #1f386c;
+}
+
+footer img {
+  max-width: 9rem;
+}
+
+.footerLink {
+  color: var(--primaryColor);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+
+.footerLink:hover {
+  color: var(--hoverColor);
+  border-color: inherit;
+}
+
+.copyright {
+  color: var(--primaryColor);
+  font-weight: bold;
+  font-style: italic;
+}
