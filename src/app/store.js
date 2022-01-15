@@ -7,7 +7,6 @@ import categoriesReducer from './categoriesReducer/categoriesReducer';
 import membersReducer from './membersReducer/membersReducer';
 import newsReducer from './newsReducer/newsReducer';
 
-
 const store = configureStore({
   reducer: {
     auth: authReducer,
