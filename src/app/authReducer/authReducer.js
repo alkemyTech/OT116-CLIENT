@@ -44,10 +44,10 @@ const authSlice = createSlice({
         status: 'Loading',
         error: null,
       }))
-      .addMatcher(isRejected, (state, action) => (({
+      .addMatcher(isRejected, (state) => (({
         ...state,
         status: 'Failed',
-        error: action?.error.message,
+        error: 'Los datos ingresados son incorrectos',
       })))
       .addDefaultCase((state) => state);
   },
