@@ -69,8 +69,9 @@ const Login = () => {
                 isInvalid={touched.email && errors.email}
                 defaultValue="ejemplo@ejemplo.com"
                 helperText="Ingresa tu correo electrónico"
+                placeholder="emailInput"
               />
-              <div type="invalid">{errors.email}</div>
+              <div type="invalid" data-testid="emailError">{errors.email}</div>
               <TextField
                 id="outlined-password-input"
                 label="*******"
@@ -82,8 +83,9 @@ const Login = () => {
                 isInvalid={touched.password && errors.password}
                 autoComplete="current-password"
                 helperText="Ingresa tu contraseña"
+                placeholder="passwordInput"
               />
-              <div type="invalid">{errors.password}</div>
+              <div type="invalid" data-testid="passwordError">{errors.password}</div>
             </div>
             <Button type="submit" variant="contained" onClick={handleSubmit}>LogIn</Button>
           </Box>
