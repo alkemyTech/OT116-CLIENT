@@ -1,7 +1,7 @@
 import React from 'react';
 import Slider from '../Slider/Slider';
-import arraySlides, { arraySlidesEscolar } from '../../constants/arraySliders';
-import configSlider, { configSliderEscolar } from '../../constants/configSliders';
+import configSlider from '../../constants/configSliders';
+import { getAllSlides } from '../../Services/slidesServices';
 
 const Home = function () {
   return (
@@ -13,8 +13,7 @@ const Home = function () {
           margin: '0 auto',
         }}
       >
-        <Slider arraySlides={arraySlides} config={configSlider} />
-        <Slider arraySlides={arraySlidesEscolar} config={configSliderEscolar} />
+        <Slider arraySlides={getAllSlides} config={configSlider} />
       </section>
     </>
   );
