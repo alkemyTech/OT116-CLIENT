@@ -14,8 +14,10 @@ export const registerUser = async (body) => {
 export const loginUser = async (body) => {
   try {
     const req = await postToEndpoint('login', body);
-    window.localStorage.setItem('token', JSON.stringify(req.token));
-    window.localStorage.setItem('user', JSON.stringify(req.user));
+    if (req.success) {
+      window.localStorage.setItem('token', JSON.stringify(req.token));
+      window.localStorage.setItem('user', JSON.stringify(req.user));
+    }
     return req;
   } catch (error) {
     throw new Error(error?.message);

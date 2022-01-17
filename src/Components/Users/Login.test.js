@@ -5,6 +5,7 @@ import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/re
 import { Provider } from 'react-redux';
 import store from '../../app/store';
 import Login from './Login';
+import * as ApiCalls from '../../Services/authService';
 
 const mockHistoryPush = jest.fn();
 
@@ -64,7 +65,7 @@ describe('Users login', () => {
     expect(submitButton).toBeInTheDocument();
     fireEvent.click(submitButton);
     expect(onSubmit).toHaveBeenCalledTimes(0);
-  })
+  });
 
   test('show error message if email input is empty', async () => {
     //expect to email input is empty
@@ -79,6 +80,31 @@ describe('Users login', () => {
     await waitFor(() => {
       const errorMessage = screen.queryByText('Este campo es obligatorio');
       expect(errorMessage).toBeInTheDocument();
-    })
+    });
+  });
+
+  test.only('api should be called when inputs are not empty and returns error message when data is wrong', async () => {
+    const data = {
+      email: 'ejemplo@ejemplo.com',
+      password: '123456',
+    };
+
+    const loginSpy = jest.spyOn(ApiCalls, 'loginUser');
+
+    const emailInput = screen.getByPlaceholderText('emailInput');
+    fireEvent.change(emailInput, {target: {value: data.email}});
+    expect(emailInput.value).toBe('ejemplo@ejemplo.com');
+
+    const passwordInput = screen.getByPlaceholderText('passwordInput');
+    fireEvent.change(passwordInput, {target: {value: data.password}});
+    expect(passwordInput.value).toBe('123456');
+
+    // expect to submit button call login function and returns error message
+    const submitButton = screen.getByRole('button');
+    expect(submitButton).toBeInTheDocument();
+    fireEvent.click(submitButton);
+    expect(await loginSpy(data)).toHaveBeenCalledTimes(1);
+
+
   })
 });
