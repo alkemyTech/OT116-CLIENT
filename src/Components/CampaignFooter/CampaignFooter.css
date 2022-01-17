@@ -21,6 +21,7 @@ footer {
   padding-block: 0.55rem;
   display: flex;
   justify-content: space-evenly;
+  gap: 1rem;
   align-items: center;
 }
 
@@ -33,7 +34,7 @@ footer {
   text-align: center;
   font-weight: 500;
   font-style: italic;
-  font-size: 2rem;
+  font-size: 1.2rem;
   letter-spacing: 0.1rem;
   display: none;
 }
@@ -41,8 +42,6 @@ footer {
 .campaigns__list,
 .socials__list {
   padding: 1rem 0;
-  display: flex;
-  gap: 1rem;
 }
 
 .ong,
@@ -55,6 +54,7 @@ li a {
 .campaigns,
 .socials__text {
   display: none;
+  font-size: .8rem;
 }
 
 .campaigns h2 {
