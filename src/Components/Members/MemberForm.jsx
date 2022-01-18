@@ -1,6 +1,3 @@
-/* eslint-disable jsx-a11y/img-redundant-alt */
-/* eslint-disable no-param-reassign */
-/* eslint-disable prefer-const */
 import React, { useState } from 'react';
 import './MemberForm.css';
 import * as yup from 'yup';
