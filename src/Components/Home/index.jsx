@@ -21,6 +21,7 @@ const Home = function () {
     >
       <Slider arraySlides={slides} config={configSlider} Component={Slide} />
       <h1 style={{ textAlign: 'center', padding: '1rem', fontSize: '2rem' }}>Bienvenido a Somos Más</h1>
+      <SubpageHero path="news" title="Últimas novedades" />
       <SubpageHero path="testimonials" title="Testimonios" />
     </section>
   );
