@@ -24,6 +24,12 @@ const arraySlidesJuguetes = [
     text: 'Los juegos son la forma más elevada de la investigación',
     targetUrl: 'https://www.ole.com.ar',
   },
+  {
+    name: 'slide4',
+    url: sliderJuguetes1,
+    text: 'Los niños necesitan tiempo y espacio para jugar. Jugar no es un lujo es una necesidad',
+    targetUrl: 'https://www.ole.com.ar',
+  },
 ];
 
 export const arraySlidesEscolar = [
@@ -43,6 +49,12 @@ export const arraySlidesEscolar = [
     name: 'slide3',
     url: sliderEscolar3,
     text: 'El camino hacia la excelencia educativa yace dentro de cada escuela.',
+    targetUrl: 'https://www.ole.com.ar',
+  },
+  {
+    name: 'slide4',
+    url: sliderEscolar1,
+    text: 'En la escuela, aprendes cómo aprender.',
     targetUrl: 'https://www.ole.com.ar',
   },
 ];
