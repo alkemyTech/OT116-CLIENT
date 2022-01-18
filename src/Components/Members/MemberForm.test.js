@@ -48,5 +48,3 @@ test("Send data & get error ", async () => {                                  //
     expect(findByText(/error to post/i));                                    //wait for changes in the dom and perform the query
   });
 });
-
-
