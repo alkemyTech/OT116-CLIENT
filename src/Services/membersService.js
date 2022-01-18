@@ -55,24 +55,6 @@ export const createMember = async (body) => {
   }
 };
 
-// export const createMember = async (body) => {
-// try {
-//  const req = await postPrivateEndPoint(path, body);
-//   return req;
-// } catch (error) {
-//   throw new Error(error?.message);
-// }
-// };
-
-// export const modifyMember = async (id, body) => {
-//  try {
-//  const req = await putPrivateEndPoint(path, id, body);
-//  return req;
-// } catch (error) {
-// throw new Error(error?.message);
-// }
-// };
-
 export const modifyMember = async (id, body) => {
   try {
     const req = await privateServices.patchPrivateById(path, id, body);
