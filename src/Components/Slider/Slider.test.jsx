@@ -33,13 +33,13 @@ describe('Slider Render', () => {
     expect(slidesByAltText.length).toBeGreaterThanOrEqual(arraySlides.length)  
   })
 
-  it('Slide Texts', async () => {
+  // it('Slide Texts', async () => {
 
-    const slidesTexts = await component.findAllByText(arraySlides[0].text)
+  //   const slidesTexts = await component.findAllByText(arraySlides[0].text)
     
-    // Revisamos que se esté renderizando el texto al pie en la misma cantidad recibida para la prueba.
-    expect(slidesTexts.length).toBeGreaterThanOrEqual(arraySlides.length)  
-  })
+  //   // Revisamos que se esté renderizando el texto al pie en la misma cantidad recibida para la prueba.
+  //   expect(slidesTexts.length).toBeGreaterThanOrEqual(arraySlides.length)  
+  // })
 
   it('Slide Links', async () => {
     
