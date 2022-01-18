@@ -5,29 +5,23 @@ import sliderEscolar1 from '../img/sliderEscolar1.jpg';
 import sliderEscolar2 from '../img/sliderEscolar2.jpg';
 import sliderEscolar3 from '../img/sliderEscolar3.jpg';
 
-const arraySlides = [
+const arraySlidesJuguetes = [
   {
     name: 'slide1',
     url: sliderJuguetes1,
-    text: 'texto al pie',
+    text: 'Jugar para un niño y una niña es la posibilidad de entender al mundo',
     targetUrl: 'https://www.ole.com.ar',
   },
   {
     name: 'slide2',
     url: sliderJuguetes2,
-    text: 'texto al pie',
+    text: 'Los niños y niñas no juegan para aprender, pero aprenden porque juegan',
     targetUrl: 'https://www.ole.com.ar',
   },
   {
     name: 'slide3',
     url: sliderJuguetes3,
-    text: 'texto al pie',
-    targetUrl: 'https://www.ole.com.ar',
-  },
-  {
-    name: 'slide4',
-    url: sliderJuguetes1,
-    text: 'texto al pie',
+    text: 'Los juegos son la forma más elevada de la investigación',
     targetUrl: 'https://www.ole.com.ar',
   },
 ];
@@ -36,27 +30,21 @@ export const arraySlidesEscolar = [
   {
     name: 'slide1',
     url: sliderEscolar1,
-    text: 'texto al pie',
+    text: 'Cuanto más llenas estén las escuelas, más vacías veremos las cárceles',
     targetUrl: 'https://www.ole.com.ar',
   },
   {
     name: 'slide2',
     url: sliderEscolar2,
-    text: 'texto al pie',
+    text: 'Lo bonito de aprender es que nadie te lo puede quitar.',
     targetUrl: 'https://www.ole.com.ar',
   },
   {
     name: 'slide3',
     url: sliderEscolar3,
-    text: 'texto al pie',
-    targetUrl: 'https://www.ole.com.ar',
-  },
-  {
-    name: 'slide4',
-    url: sliderEscolar1,
-    text: 'texto al pie',
+    text: 'El camino hacia la excelencia educativa yace dentro de cada escuela.',
     targetUrl: 'https://www.ole.com.ar',
   },
 ];
 
-export default arraySlides;
+export default arraySlidesJuguetes;

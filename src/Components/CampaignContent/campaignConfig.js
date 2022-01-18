@@ -11,7 +11,7 @@ import image10 from '../../Assets/Photos/kid1.jpg';
 
 export const toysCampaignConfig = {
   name: 'Campaña Juguetes',
-  date: '2022-01-15',
+  date: '2022-01-20',
   time: '20:00',
   address: 'Calle 123, Localidad, Provincia',
   description: 'Descripcion de la campaña lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
@@ -21,7 +21,7 @@ export const toysCampaignConfig = {
 
 export const schoolCampaignConfig = {
   name: 'Campaña Escolar',
-  date: '2022-01-15',
+  date: '2022-01-19',
   time: '20:00',
   address: 'Calle 123, Localidad, Provincia',
   description: 'Descripcion de la campaña lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',

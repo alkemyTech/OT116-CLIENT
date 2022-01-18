@@ -58,7 +58,7 @@ export const configSliderEscolar = {
   keyboard: true, // activa el movimiento de slides con las flechas del teclado.
   customClasses: {
     slideContainer: '', // custom class a incorporar al slideContainer
-    slideImage: '', // custom class a incorporar al slideImage
+    slideImage: 'contained-image', // custom class a incorporar al slideImage
     slideText: '', // custom class a incorporar al slideText
   },
   breakpoints: {
