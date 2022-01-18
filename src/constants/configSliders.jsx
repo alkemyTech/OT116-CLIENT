@@ -84,7 +84,7 @@ export const configCardsSlider = {
   spaceBetween: '1rem',
   slidesPerView: 2,
   pagination: {
-    active: true,
+    active: false,
     clickable: true,
     type: 'bullets',
   },

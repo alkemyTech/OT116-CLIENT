@@ -27,7 +27,7 @@ const SubpageHero = ({ path, title }) => {
 
   return (
     <section>
-      <h2 style={{ textAlign: 'center' }}>{title}</h2>
+      <h2 style={{ textAlign: 'center', padding: '2rem' }}>{title}</h2>
       <Slider
         style={{ padding: '2rem' }}
         arraySlides={cards}
