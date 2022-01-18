@@ -80,4 +80,42 @@ export const configSliderEscolar = {
   },
 };
 
+export const configCardsSlider = {
+  spaceBetween: '1rem',
+  slidesPerView: 2,
+  pagination: {
+    active: true,
+    clickable: true,
+    type: 'bullets',
+  },
+  navigation: true,
+  loop: true,
+  autoplay: {
+    active: true,
+    delay: 5000,
+    disableOnInteraction: false,
+    pauseOnMouseEnter: true,
+  },
+  keyboard: true,
+  customClasses: {
+    slideContainer: '',
+    slideImage: '',
+    slideText: '',
+  },
+  breakpoints: {
+    320: {
+      slidesPerView: 3,
+      spaceBetween: 0,
+    },
+    480: {
+      slidesPerView: 3,
+      spaceBetween: 0,
+    },
+    640: {
+      slidesPerView: 4,
+      spaceBetween: 0,
+    },
+  },
+};
+
 export default configSlider;
