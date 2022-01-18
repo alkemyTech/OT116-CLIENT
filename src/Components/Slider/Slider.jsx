@@ -1,35 +1,31 @@
-import React, { useEffect, useState } from 'react';
-
+import React from 'react';
 // import Swiper core and required modules
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, {
   Pagination, Navigation, Autoplay, Keyboard,
 } from 'swiper';
-import Slide from '../Slide/Slide';
-
 // import swiper CSS
 import 'swiper/swiper.min.css';
 import 'swiper/swiper-bundle.min.css';
 import 'swiper/components/navigation/navigation.min.css';
 import 'swiper/components/pagination/pagination.min.css';
-
 // import custom CSS
 import './Slider.css';
+
 // install Swiper modules
 SwiperCore.use([Autoplay, Keyboard, Pagination, Navigation]);
 
-const Slider = function ({ arraySlides, config, onSlideChange }) {
-  const [slides, setSlides] = useState([]);
-
-  const renderSlide = (slide) => (
-    <SwiperSlide data-testid="slide-container" key={slide.id} style={{ width: '100%' }}>
-      <Slide slide={slide} config={config} />
+const Slider = function ({
+  arraySlides,
+  config,
+  onSlideChange,
+  Component,
+}) {
+  const renderSlide = (data) => (
+    <SwiperSlide data-testid="slide-container" key={data.id} style={{ width: '100%' }}>
+      <Component data={data} config={config} />
     </SwiperSlide>
   );
-
-  useEffect(() => {
-    arraySlides().then((res) => setSlides(res));
-  }, []);
 
   return (
     <Swiper
@@ -53,7 +49,7 @@ const Slider = function ({ arraySlides, config, onSlideChange }) {
       }}
       breakpoints={config.breakpoints}
     >
-      {slides.length !== 0 && slides.map((slide) => renderSlide(slide))}
+      {arraySlides.length !== 0 && arraySlides.map((data) => renderSlide(data))}
     </Swiper>
   );
 };
