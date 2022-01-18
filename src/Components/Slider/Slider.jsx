@@ -22,7 +22,7 @@ const Slider = function ({ arraySlides, config, onSlideChange }) {
   const [slides, setSlides] = useState([]);
 
   const renderSlide = (slide) => (
-    <SwiperSlide data-testid="slide-container" key={slide.id}>
+    <SwiperSlide data-testid="slide-container" key={slide.id} style={{ width: '100%' }}>
       <Slide slide={slide} config={config} />
     </SwiperSlide>
   );

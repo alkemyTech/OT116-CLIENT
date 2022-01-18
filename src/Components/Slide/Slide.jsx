@@ -5,7 +5,7 @@ const Slide = function ({ slide, config }) {
     <div className={`slide-container ${config.customClasses.slideContainer}`}>
       <img className={`slider-image ${config.customClasses.slideImage}`} src={slide.image} alt={slide.name} />
       <div className="slider-text-container">
-        <p className={`slider-text ${config.customClasses.slideText}`}>{slide.description}</p>
+        <p className={`slider-text ${config.customClasses.slideText}`}>{(slide.description.replace(/<\/?[^>]+(>|$)|(&nbsp;)/g, ''))}</p>
       </div>
     </div>
   );
