@@ -17,7 +17,6 @@ const SubpageHero = ({ path, title }) => {
     getEndpoint(path)
       .then((res) => {
         setCards(res);
-        console.log(cards);
       })
       .catch((err) => new Error(err));
   };
@@ -28,8 +27,9 @@ const SubpageHero = ({ path, title }) => {
 
   return (
     <section>
-      <h2>{title}</h2>
+      <h2 style={{ textAlign: 'center' }}>{title}</h2>
       <Slider
+        style={{ padding: '2rem' }}
         arraySlides={cards}
         config={configCardsSlider}
         Component={CardComponent}
