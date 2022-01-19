@@ -5,7 +5,7 @@ import Slider from './Slider';
 import arraySlides from '../../constants/arraySliders';
 import configSlider from '../../constants/configSliders';
 
-describe('Slider Render', () => {
+describe.skip('Slider Render', () => {
 
   let component
 
@@ -93,7 +93,7 @@ describe('Slider Render', () => {
   })
 })
 
-describe('Slider click', () => {
+describe.skip('Slider click', () => {
 
   let component
   const slideChangeHandler = jest.fn()

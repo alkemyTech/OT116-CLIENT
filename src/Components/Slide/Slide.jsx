@@ -1,13 +1,11 @@
 import React from 'react';
 
-const Slide = function ({ slide, config }) {
+const Slide = function ({ data, config }) {
   return (
     <div className={`slide-container ${config.customClasses.slideContainer}`}>
-      <a href={slide.targetUrl}>
-        <img className={`slider-image ${config.customClasses.slideImage}`} src={slide.url} alt={slide.name} />
-      </a>
+      <img className={`slider-image ${config.customClasses.slideImage}`} src={data.image} alt={data.name} />
       <div className="slider-text-container">
-        <p className={`slider-text ${config.customClasses.slideText}`}>{slide.text}</p>
+        <p className={`slider-text ${config.customClasses.slideText}`}>{(data.description.replace(/<\/?[^>]+(>|$)|(&nbsp;)/g, ''))}</p>
       </div>
     </div>
   );
