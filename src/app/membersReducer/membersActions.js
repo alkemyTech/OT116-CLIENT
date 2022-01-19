@@ -5,6 +5,7 @@ import {
   addMember,
   updateMemberById,
   deleteMemberById,
+  modifyMember,
 } from '../../Services/membersService';
 
 const getMembers = createAsyncThunk('members/getMembers', getAllMembers);
@@ -23,10 +24,13 @@ const createMember = createAsyncThunk('members/addNewMember', addMember);
 
 const deleteMember = createAsyncThunk('members/deleteMember', deleteMemberById);
 
+const changeMember = createAsyncThunk('members/modifyMember', modifyMember);
+
 export {
   getMembers,
   getMemberbyId,
   updateMember,
   createMember,
   deleteMember,
+  changeMember,
 };
